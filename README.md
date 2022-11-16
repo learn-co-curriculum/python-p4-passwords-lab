@@ -55,6 +55,27 @@ $ npm start --prefix client
 
 You don't have to make any changes to the React code to get this lab working.
 
+### Configuration
+
+Before we begin, take note of the new `config.py` file in the `server/`
+directory. Flask is a fun framework in that it gives us many different ways to
+structure our applications- occasionally though, we're forced to adopt a new
+architecture.
+
+In each of our applications so far, `app.py` needed to import from `models.py`
+in order to initialize the database's connection to the app. That's still the
+case here, but we also find ourselves with the need to import an instantiated
+`Bcrypt` from `app.py` into `models.py`! This creates a _circular import_, where
+objects in two separate files are dependent upon one another to function.
+
+To avoid this, you can often refactor your objects to avoid unnecessary
+dependencies (we're all guilty of this!), you can refactor your code into one
+large file, or you can move some of your imports and configurations into a third
+file. That's what we did here- check out `config.py` and you'll notice a lot of
+familiar code. We took the imports and configurations from `app.py` and
+`models.py` and put them together to avoid circular imports. These are then
+imported by `app.py` and `models.py` when they're ready to be used.
+
 ***
 
 ## Setup
