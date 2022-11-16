@@ -36,7 +36,6 @@ $ pipenv install && pipenv shell
 $ npm install --prefix client
 $ cd server
 $ flask db upgrade
-$ python seed.py
 ```
 
 You can work on this lab by running the tests with `pytest -x`. It will also be
