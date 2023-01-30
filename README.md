@@ -43,7 +43,7 @@ helpful to see what's happening during the request/response cycle by running the
 app in the browser. You can run the Flask server with:
 
 ```console
-$ flask app.py
+$ python app.py
 ```
 
 And you can run React in another terminal with:
