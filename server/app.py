@@ -16,7 +16,16 @@ class ClearSession(Resource):
         return {}, 204
 
 class Signup(Resource):
-    pass
+    
+    def post(self):
+        json = request.get_json()
+        user = User(
+            username=json['username'],
+            password_hash=json['password']
+        )
+        db.session.add(user)
+        db.session.commit()
+        return user.to_dict(), 201
 
 class CheckSession(Resource):
     pass
@@ -28,6 +37,7 @@ class Logout(Resource):
     pass
 
 api.add_resource(ClearSession, '/clear', endpoint='clear')
+api.add_resource(Signup, '/signup', endpoint='signup')
 
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
