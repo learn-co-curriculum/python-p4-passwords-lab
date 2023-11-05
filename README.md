@@ -5,13 +5,13 @@
 - Implement login and signup with a password.
 - Use `Bcrypt` to salt and hash passwords.
 
-***
+---
 
 ## Key Vocab
 
-- **Identity and Access Management (IAM)**: a subfield of software engineering that
-  focuses on users, their attributes, their login information, and the resources
-  that they are allowed to access.
+- **Identity and Access Management (IAM)**: a subfield of software engineering
+  that focuses on users, their attributes, their login information, and the
+  resources that they are allowed to access.
 - **Authentication**: proving one's identity to an application in order to
   access protected information; logging in.
 - **Authorization**: allowing or disallowing access to resources based on a
@@ -21,15 +21,15 @@
 - **Cookie**: data from a web application that is stored by the browser. The
   application can retrieve this data during subsequent sessions.
 
-***
+---
 
 ## Introduction
 
 We're going to make a Flask app that covers a simple authentication flow: users
 can create accounts, log in, and log out.
 
-There is some starter code in place for a Flask API backend and a React frontend.
-To get set up, run:
+There is some starter code in place for a Flask API backend and a React
+frontend. To get set up, run:
 
 ```console
 $ pipenv install && pipenv shell
@@ -75,7 +75,7 @@ familiar code. We took the imports and configurations from `app.py` and
 `models.py` and put them together to avoid circular imports. These are then
 imported by `app.py` and `models.py` when they're ready to be used.
 
-***
+---
 
 ## Setup
 
@@ -94,7 +94,7 @@ Users should not be able to log in if they enter an incorrect password.
 > surprisingly easy to produce rules that decrease password security rather than
 > enhance it.**
 
-***
+---
 
 ## Instructions
 
@@ -110,15 +110,14 @@ To complete the lab and get the tests passing, you will need to:
   object in the JSON response. Otherwise, return an empty response with a 204
   status code.
 
-- Create a `Login` resource with a `post()` method for logging in that
-  responds to a `POST /login` request and returns the user as JSON.
-  
-- Create a `Logout` resource with a `delete()` method for logging out
-  that responds to a `DELETE /logout` request.
+- Create a `Login` resource with a `post()` method for logging in that responds
+  to a `POST /login` request and returns the user as JSON.
+- Create a `Logout` resource with a `delete()` method for logging out that
+  responds to a `DELETE /logout` request.
 
 Happy coding!
 
-***
+---
 
 ## Resources
 
