@@ -20,9 +20,9 @@ class Signup(Resource):
     def post(self):
         json = request.get_json()
         user = User(
-            username=json['username'],
-            password_hash=json['password']
+            username=json['username']
         )
+        user.password_hash = json['password']
         db.session.add(user)
         db.session.commit()
         return user.to_dict(), 201
